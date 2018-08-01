@@ -112,11 +112,12 @@ https://robomongo.org/download
 pip3 install pymongo
 在你安装并开启 mongo 之后，就可以使用 pymongo 来连接使用 mongodb 了
 mongodb 使用的是 Javascript 语句
+client.数据库名称[表名称] 可以得到一张表
 mongo_demo 执行流程:
     1. 创建连接:
         # 连接 mongo 数据库, 主机是本机, 端口是默认的端口
         client = pymongo.MongoClient("mongodb://localhost:27017")
-    2. 设置使用的数据库: (client 其实是一个特殊的字典)
+    2. 设置使用的数据库: (client 其实是一个特殊的字典), 也可以使用 client.数据库名字
         database = client['数据库名字']
     3. mongo 无须创建表 (MongoDB里面是document), 可以直接插入
         database.my_user.insert(u)        # u 是一个字典, 包含了一个对象的字段名和值
